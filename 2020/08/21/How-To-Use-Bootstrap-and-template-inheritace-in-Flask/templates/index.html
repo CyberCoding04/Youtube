@@ -1,0 +1,23 @@
+{% extends('layout.html') %} <!-- We have to use extend and then layout file name to import the layout-->
+{% block title %}Home{% endblock %} <!-- This Will set the title to Home-->
+{% block body %}
+<!-- All text in the body block will be there in the layout-->
+<h1>Hello World</h1>
+<h2>How to use HTML Templates</h2>
+<a href = "http://127.0.0.1:5000/"> This is Our App Site</a>
+<!-- Variable-> (Its not needed) --> {{ variable }} <!-- Syntax for displaying Dynamic Variabled from app --><hr> <!-- I am Adding a Hr for no confusion -->
+{{ variable2 }}
+<hr>
+{% if variable2 < 0 %}
+	Less than 0
+{% elif variable2 > 0 and variable2 < 1000 %}
+	less than 1000 and greater than 0
+{% elif variable2 > 1000 and variable2 < 5000 %}
+	greater than 1000 and less than 5000
+{% else %}
+	Greater than 5000
+{% endif %} <!-- At Last We have to Use endif to close the if-else statements-->
+{% for listitem in list1 %}
+	<p> ListItem -> {{ listitem }}</p>
+{% endfor %} <!-- Like Endif we have to use endfor to end the for loop.-->
+{% endblock %}
